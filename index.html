@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EngagePro Partner & Affiliate Programs</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 40px 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            overflow: hidden;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 60px 40px;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+
+        .header p {
+            font-size: 1.2em;
+            opacity: 0.95;
+        }
+
+        .content {
+            padding: 60px 40px;
+        }
+
+        .programs {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+            gap: 40px;
+            margin-bottom: 60px;
+        }
+
+        .program-card {
+            background: #f8f9fa;
+            border-radius: 15px;
+            padding: 40px;
+            position: relative;
+            border: 2px solid #e9ecef;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .program-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        .program-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 5px;
+            border-radius: 15px 15px 0 0;
+        }
+
+        .program-card.partner::before {
+            background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
+        }
+
+        .program-card.affiliate::before {
+            background: linear-gradient(90deg, #f093fb 0%, #f5576c 100%);
+        }
+
+        .program-card h2 {
+            font-size: 2em;
+            margin-bottom: 20px;
+            color: #2d3748;
+        }
+
+        .program-card .subtitle {
+            font-size: 1.05em;
+            color: #718096;
+            margin-bottom: 30px;
+            line-height: 1.7;
+        }
+
+        .benefits {
+            margin: 30px 0;
+        }
+
+        .benefits h3 {
+            font-size: 1.3em;
+            margin-bottom: 20px;
+            color: #2d3748;
+        }
+
+        .benefit-list {
+            list-style: none;
+        }
+
+        .benefit-list li {
+            padding: 12px 0 12px 35px;
+            position: relative;
+            color: #4a5568;
+            font-size: 1.05em;
+        }
+
+        .benefit-list li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: #48bb78;
+            font-weight: bold;
+            font-size: 1.3em;
+        }
+
+        .pricing {
+            background: #edf2f7;
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 25px;
+            text-align: center;
+        }
+
+        .pricing strong {
+            color: #2d3748;
+            font-size: 1.1em;
+        }
+
+        .ideal-for {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 25px;
+            border-left: 4px solid #667eea;
+        }
+
+        .ideal-for h4 {
+            color: #2d3748;
+            margin-bottom: 12px;
+            font-size: 1.1em;
+        }
+
+        .ideal-for ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .ideal-for li {
+            padding: 8px 0;
+            color: #4a5568;
+        }
+
+        .ideal-for li::before {
+            content: '→';
+            margin-right: 10px;
+            color: #667eea;
+            font-weight: bold;
+        }
+
+        .comparison-section {
+            margin: 60px 0;
+        }
+
+        .comparison-section h2 {
+            text-align: center;
+            font-size: 2.2em;
+            margin-bottom: 40px;
+            color: #2d3748;
+        }
+
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .comparison-table thead {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+
+        .comparison-table th {
+            padding: 20px;
+            text-align: left;
+            font-size: 1.1em;
+            font-weight: 600;
+        }
+
+        .comparison-table td {
+            padding: 20px;
+            border-bottom: 1px solid #e9ecef;
+            color: #4a5568;
+        }
+
+        .comparison-table tbody tr:last-child td {
+            border-bottom: none;
+        }
+
+        .comparison-table tbody tr:hover {
+            background: #f8f9fa;
+        }
+
+        .comparison-table th:first-child,
+        .comparison-table td:first-child {
+            font-weight: 600;
+            color: #2d3748;
+        }
+
+        .cta-section {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 50px 40px;
+            border-radius: 15px;
+            text-align: center;
+            margin: 60px 0 40px;
+            color: white;
+        }
+
+        .cta-section h2 {
+            font-size: 2em;
+            margin-bottom: 30px;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-bottom: 30px;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 18px 40px;
+            background: white;
+            color: #667eea;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1.1em;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+        }
+
+        .cta-button.partner {
+            background: white;
+            color: #667eea;
+        }
+
+        .cta-button.affiliate {
+            background: #f5576c;
+            color: white;
+        }
+
+        .footer-text {
+            text-align: center;
+            padding: 30px 40px;
+            color: #718096;
+            font-size: 1.05em;
+            line-height: 1.8;
+        }
+
+        .footer-text strong {
+            color: #2d3748;
+        }
+
+        @media (max-width: 768px) {
+            .programs {
+                grid-template-columns: 1fr;
+            }
+
+            .header h1 {
+                font-size: 2em;
+            }
+
+            .content {
+                padding: 40px 20px;
+            }
+
+            .comparison-table {
+                font-size: 0.9em;
+            }
+
+            .comparison-table th,
+            .comparison-table td {
+                padding: 15px 10px;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            .cta-button {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>EngagePro Partner & Affiliate Programs</h1>
+            <p>Choose the program that fits your business model</p>
+        </div>
+
+        <div class="content">
+            <div class="programs">
+                <!-- Partner Program -->
+                <div class="program-card partner">
+                    <h2>Partner Program</h2>
+                    <p class="subtitle">If you're a sales professional, consultant, or agency who wants to actively sell and support clients, the Partner Program is the best fit.</p>
+
+                    <div class="benefits">
+                        <h3>As a Partner, you'll receive:</h3>
+                        <ul class="benefit-list">
+                            <li>Qualified leads directly from EngagePro</li>
+                            <li>Bi-weekly training sessions on how and where to sell</li>
+                            <li>Technical support from our implementation team</li>
+                            <li>30% recurring commissions on all sales</li>
+                            <li>Co-branded materials and a dedicated Partner Portal</li>
+                            <li>Access to sandbox and feature training</li>
+                        </ul>
+                    </div>
+
+                    <div class="pricing">
+                        <strong>Partner tiers start at $25/month</strong><br>
+                        Silver, Gold, and Platinum options based on your desired support level and lead volume
+                    </div>
+                </div>
+
+                <!-- Affiliate Program -->
+                <div class="program-card affiliate">
+                    <h2>Affiliate Program</h2>
+                    <p class="subtitle">If you prefer to promote EngagePro CRM online without managing client relationships directly, the Affiliate Program is ideal.</p>
+
+                    <div class="benefits">
+                        <h3>Affiliates earn commissions simply by referring new customers through your unique link.</h3>
+                        
+                        <div class="ideal-for">
+                            <h4>This program is perfect for:</h4>
+                            <ul>
+                                <li>Content creators, influencers, and bloggers</li>
+                                <li>Email marketers or newsletter owners</li>
+                                <li>Educators or online business advisors</li>
+                            </ul>
+                        </div>
+
+                        <h3 style="margin-top: 25px;">You'll receive:</h3>
+                        <ul class="benefit-list">
+                            <li>Marketing materials and tracking links</li>
+                            <li>A real-time commission dashboard</li>
+                            <li>Fast commission payouts per sale</li>
+                        </ul>
+                    </div>
+
+                    <div class="pricing">
+                        <strong>Free to join</strong><br>
+                        Designed for those who focus on content-driven promotion rather than direct selling
+                    </div>
+                </div>
+            </div>
+
+            <!-- Comparison Table -->
+            <div class="comparison-section">
+                <h2>In Short</h2>
+                <table class="comparison-table">
+                    <thead>
+                        <tr>
+                            <th>Aspect</th>
+                            <th>Affiliate Program</th>
+                            <th>Partner Program</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Sales Method</td>
+                            <td>Online promotion via links</td>
+                            <td>Direct sales and consultations</td>
+                        </tr>
+                        <tr>
+                            <td>Best For</td>
+                            <td>Influencers, content creators</td>
+                            <td>Agencies, consultants, sales professionals</td>
+                        </tr>
+                        <tr>
+                            <td>Investment</td>
+                            <td>Free</td>
+                            <td>$25–$85/month</td>
+                        </tr>
+                        <tr>
+                            <td>Support & Tools</td>
+                            <td>Marketing materials, tracking links</td>
+                            <td>Leads, sandbox, training, co-marketing</td>
+                        </tr>
+                        <tr>
+                            <td>Commission</td>
+                            <td>Per sale</td>
+                            <td>30% recurring commission</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Call to Action -->
+            <div class="cta-section">
+                <h2>Ready to Get Started?</h2>
+                <div class="cta-buttons">
+                    <a href="#" class="cta-button partner">👉 Join the Partner Program</a>
+                    <a href="#" class="cta-button affiliate">👉 Join the Affiliate Program</a>
+                </div>
+                <p style="font-size: 1.1em; opacity: 0.95;">Would you like to schedule a short call this week to walk you through which program best fits your business model?</p>
+            </div>
+
+            <div class="footer-text">
+                <p><strong>Partner Program:</strong> Receive lead referrals, training, and full support to actively sell and support clients.</p>
+                <p><strong>Affiliate Program:</strong> Share links and earn commissions passively through content-driven promotion.</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+
